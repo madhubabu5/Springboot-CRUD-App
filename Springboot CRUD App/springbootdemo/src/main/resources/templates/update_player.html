@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Player MS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Player Management System</h1>
+    <h2>Update Player</h2>
+
+    <form action="#" th:action="@{/savePlayer}" th:object="${player}" method="POST">
+
+        <!-- Adding hidden feature to handle update -->
+        <input type="hidden" th:field="*{id}"/>
+
+        <input type="text" th:field="*{name}" class="form-control mb-4 col-4"/>
+        <input type="text" th:field="*{rating}" class="form-control mb-4 col-4"/>
+        <button type="submit" class="btn btn-info col-2">Update Player</button>
+    </form>
+    <a th:href="@{/}"> Back to Players List </a>
+</div>
+</body>
+</html>
